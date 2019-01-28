@@ -1,0 +1,25 @@
+<mat-toolbar>
+  <mat-toolbar-row fxLayout="row" fxLayoutAlign="space-around center">
+    <img src="/assets/img/logo-frame.png" alt="wireframe" height="80px" width="140px;" />
+    <div fxShow.gt-xs="true" fxHide fxLayout="row" fxLayoutGap="20px" style="padding-right: 5px">
+      <button class="button" fragmentAnchor="work" mat-button>
+        <span> WORK</span>
+      </button>
+      <button class="button" fragmentAnchor="service" mat-button>
+        <span> SERVICE </span>
+      </button>
+      <button class="button" fragmentAnchor="about" mat-button>
+        <span>ABOUT </span>
+      </button>
+      <button class="button" fragmentAnchor="blog" mat-button>
+        <span> BLOG</span>
+      </button>
+      <button class="button" fragmentAnchor="blog" mat-button>
+        <span> CONTACT</span>
+      </button>
+    </div>
+    <button (click)="onToggle()" fxShow.lt-sm="true" fxHide mat-icon-button>
+      <mat-icon aria-label="Icon-button with a menu">menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>

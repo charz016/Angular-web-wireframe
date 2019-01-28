@@ -1,21 +1,427 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav fxFlexFill>
+        <div fxLayout="column" fxLayoutAlign="start center" fxLayoutGap="20px" style="margin-top: 20px;">
+            <div fxLayout="row" fxLayoutAlign="space-around center" fxFill>
+                <img height="80px" src="assets/img/logo-frame.png" alt="Medio Melón Logo" />
+                <button (click)="onToggle()" mat-icon-button>
+                    <mat-icon aria-label="close">close</mat-icon>
+                </button>
+            </div>
+            <button class="button" fragmentAnchor="work" mat-button>
+                <span> WORK</span>
+            </button>
+            <button class="button" fragmentAnchor="service" mat-button>
+                <span> SERVICE </span>
+            </button>
+            <button class="button" fragmentAnchor="about" mat-button>
+                <span>ABOUT </span>
+            </button>
+            <button class="button" fragmentAnchor="blog" mat-button>
+                <span> BLOG</span>
+            </button>
+            <button class="button" fragmentAnchor="blog" mat-button>
+                <span> CONTACT</span>
+            </button>
+        </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+        <div fxLayout="row" class="fixed-bar">
+            <navbar (toggle)="onToggle()" fxFill></navbar>
+        </div>
+        <div fxFlex fxLayout="column">
+            <div fxFlex="1 0 auto">
+                <section class="section-1">
+                    <div fxLayout.lt-sm="column" fxLayout="row" fxFill>
+                        <div class="section-1__info" ngClass.lt-sm="section-1__info-sm" fxFlex="50%" fxFlex.lt-sm="1 1 auto"
+                            fxLayoutAlign="center center">
+                            <div class="section-1__info-container" ngClass.lt-sm="section-1__info-container-sm">
+                                <h1 class="section-1__info-container-title" ngClass.lt-sm="section-1__info-container-title-sm">Sed
+                                    Ut Perspiciatis Unde Omnis Iste Natus
+                                </h1>
+                                <p class="section-1__info-container-text"> At vero eos et accusamus et iusto odio
+                                    dignissimos ducimus qui
+                                    blanditiis
+                                    praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
+                                    excepturi sint</p>
+                                <button class="section-1__info-container-button">BUTTON</button>
+                            </div>
+                        </div>
 
-<router-outlet></router-outlet>
+                        <div class="section-1__img" fxFlex="50%" fxHide.lt-sm="true" fxFlex.lt-sm="1 1 auto" ngClass.sm="section-1__img-sm">
+
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-2">
+                    <div fxLayout="column" fxLayoutAlign="center center" fxFill>
+                        <div class="section-2__info">
+                            <h1 class="section-2__info-title">Features</h1>
+                            <p class="section-2__info-text">At vero eos et accusamus et iusto odio dignissimos ducimus
+                                qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                molestias excepturi sint</p>
+                        </div>
+                        <div class="section-2__wrap" fxLayout="row wrap" fxLayoutAlign="center center">
+                            <div class="section-2__wrap-container">
+                                <div class="section-2__wrap-container-check">
+                                    <mat-icon>done</mat-icon>
+                                </div>
+                                <div class="section-2__wrap-container-info">
+                                    <p class="section-2__wrap-container-info-title">Perspiciatis Unde Omnis
+                                    </p>
+                                    <p class="section-2__wrap-container-info-text">At vero eos et accusamus et iusto
+                                        odio dignissimos ducimus
+                                        qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
+                                        quas molestias excepturi sint
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="section-2__wrap-container">
+                                <div class="section-2__wrap-container-check">
+                                    <mat-icon>done</mat-icon>
+                                </div>
+                                <div class="section-2__wrap-container-info">
+                                    <p class="section-2__wrap-container-info-title">Sed Unde Omnis
+                                    </p>
+                                    <p class="section-2__wrap-container-info-text">At vero eos et accusamus et iusto
+                                        odio dignissimos ducimus
+                                        qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
+                                        quas molestias excepturi sint
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="section-2__wrap-container">
+                                <div class="section-2__wrap-container-check">
+                                    <mat-icon>done</mat-icon>
+                                </div>
+                                <div class="section-2__wrap-container-info">
+                                    <p class="section-2__wrap-container-info-title">Iste Natus Error
+                                    </p>
+                                    <p class="section-2__wrap-container-info-text">At vero eos et accusamus et iusto
+                                        odio dignissimos ducimus
+                                        qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
+                                        quas molestias excepturi sint
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="section-2__wrap-container">
+                                <div class="section-2__wrap-container-check">
+                                    <mat-icon>done</mat-icon>
+                                </div>
+                                <div class="section-2__wrap-container-info">
+                                    <p class="section-2__wrap-container-info-title">Sit Voluptatem Accusantium
+                                    </p>
+                                    <p class="section-2__wrap-container-info-text">At vero eos et accusamus et iusto
+                                        odio dignissimos ducimus
+                                        qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et
+                                        quas molestias excepturi sint
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="section-3">
+                    <div fxLayout.lt-md="column" fxLayout="row" fxLayoutAlign="center center" fxFill>
+
+                        <div class="section-3__card" fxLayout="column" fxLayoutAlign="center center" fxFlex
+                            fxFlex.lt-md="1 1 auto">
+                            <div class="section-3__card-container">
+                                <i class="section-3__card-container-icon material-icons">image</i>
+                                <h1 class="section-3__card-container-title">Perspiciatis Unde Omnis</h1>
+                                <p class="section-3__card-container-text">At vero eos et accusamus et iusto odio
+                                    dignissimos ducimus
+                                    qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                    molestias excepturi sint</p>
+                                <button class="section-3__card-container-button">READ MORE</button>
+                            </div>
+                        </div>
+
+                        <div class="section-3__card" fxLayout="column" fxLayoutAlign="center center" fxFlex
+                            fxFlex.lt-md="1 1 auto">
+                            <div class="section-3__card-container">
+                                <i class="section-3__card-container-icon material-icons">image</i>
+                                <h1 class="section-3__card-container-title">Perspiciatis Unde Omnis</h1>
+                                <p class="section-3__card-container-text">At vero eos et accusamus et iusto odio
+                                    dignissimos ducimus
+                                    qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                    molestias excepturi sint</p>
+                                <button class="section-3__card-container-button">READ MORE</button>
+                            </div>
+                        </div>
+
+                        <div class="section-3__card" fxLayout="column" fxLayoutAlign="center center" fxFlex
+                            fxFlex.lt-md="1 1 auto">
+                            <div class="section-3__card-container">
+                                <i class="section-3__card-container-icon material-icons">image</i>
+                                <h1 class="section-3__card-container-title">Perspiciatis Unde Omnis</h1>
+                                <p class="section-3__card-container-text">At vero eos et accusamus et iusto odio
+                                    dignissimos ducimus
+                                    qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                    molestias excepturi sint</p>
+                                <button class="section-3__card-container-button">READ MORE</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-4">
+                    <div fxLayout="column" fxLayoutAlign="center center">
+                        <div class="section-4__info">
+                            <h1 class="section-4__info-title">Our Work</h1>
+                            <p class="section-4__info-text">At vero eos et accusamus et iusto odio dignissimos
+                                ducimus
+                                qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                molestias excepturi sint</p>
+                            <button class="section-4__info-button" mat-button>
+                                <span> ALL</span>
+                            </button>
+                            <button class="section-4__info-button" mat-button>
+                                <span> ISTE</span>
+                            </button>
+                            <button class="section-4__info-button" mat-button>
+                                <span> NATUS</span>
+                            </button>
+                            <button class="section-4__info-button" mat-button>
+                                <span> UNDE</span>
+                            </button>
+                            <button class="section-4__info-button" mat-button>
+                                <span> OMNIS</span>
+                            </button>
+                        </div>
+
+                        <div class="section-4__wrap" fxLayout="row wrap" fxLayoutAlign="center center">
+
+                            <div class="section-4__wrap-item">
+                                <div class="section-4__wrap-item-img">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <p class="section-4__wrap-item-title">Unde Omnis</p>
+                                <p class="section-4__wrap-item-text">Accusamus Lusto Odio. Dignissmos</p>
+                            </div>
+
+                            <div class="section-4__wrap-item">
+                                <div class="section-4__wrap-item-img">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <p class="section-4__wrap-item-title">Sed Ut Unde</p>
+                                <p class="section-4__wrap-item-text">Veros eos. Ducimus</p>
+                            </div>
+
+                            <div class="section-4__wrap-item">
+                                <div class="section-4__wrap-item-img">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <p class="section-4__wrap-item-title">Iste Natus</p>
+                                <p class="section-4__wrap-item-text">Sed ut. Perspiciatis</p>
+                            </div>
+
+                            <div class="section-4__wrap-item">
+                                <div class="section-4__wrap-item-img">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <p class="section-4__wrap-item-title">Perspiciatis Unde</p>
+                                <p class="section-4__wrap-item-text">Accusamus Lusto Odio</p>
+                            </div>
+
+                            <div class="section-4__wrap-item">
+                                <div class="section-4__wrap-item-img">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <p class="section-4__wrap-item-title">Unde Omnis</p>
+                                <p class="section-4__wrap-item-text">Accusamus Lusto Odio. Dignissmos</p>
+                            </div>
+
+                            <div class="section-4__wrap-item">
+                                <div class="section-4__wrap-item-img">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <p class="section-4__wrap-item-title">Sed Ut Unde</p>
+                                <p class="section-4__wrap-item-text">Veros eos. Ducimus</p>
+                            </div>
+
+                            <div class="section-4__wrap-item">
+                                <div class="section-4__wrap-item-img">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <p class="section-4__wrap-item-title">Iste Natus</p>
+                                <p class="section-4__wrap-item-text">Sed ut. Perspiciatis</p>
+                            </div>
+
+                            <div class="section-4__wrap-item">
+                                <div class="section-4__wrap-item-img">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <p class="section-4__wrap-item-title">Perspiciatis Unde</p>
+                                <p class="section-4__wrap-item-text">Accusamus Lusto Odio</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-5">
+                    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-around center" fxFill>
+                        <div class="section-5__info">
+                            <p class="section-5__info-title">Perspiciatis Unde Omnis</p>
+                            <p class="section-5__info-text">At vero eos et accusamus et iusto odio dignissimos ducimus
+                                qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                molestias excepturi sint</p>
+                        </div>
+
+                        <div fxLayout="row" class="section-5__actions">
+                            <button class="section-5__actions-button">BUTTON</button>
+                            <button class="section-5__actions-button">BUTTON</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-6">
+                    <div fxLayout="column" fxLayoutAlign="center center" fxFill>
+                        <div class="section-6__info">
+                            <h1 class="section-6__info-title">Our Blog</h1>
+                            <p class="section-6__info-text">At vero eos et accusamus et iusto odio dignissimos ducimus
+                                qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
+                                molestias excepturi sint</p>
+                        </div>
+
+                        <div class="section-6__wrap" fxLayout="row wrap" fxLayoutAlign="center center">
+                            <div class="section-6__wrap-container">
+                                <div class="section-6__wrap-container-img" ngClass.xs="section-6__wrap-container-img-xs">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <div class="section-6__wrap-container-info">
+                                    <p class="section-6__wrap-container-info-title">Sed Unde Omnis
+                                    </p>
+                                    <small class="section-6__wrap-container-info-by">by <b>admin</b> | 19 APRIL</small>
+                                    <p class="section-6__wrap-container-info-text"> Nemo enim ipsam voluptatem,
+                                        quia voluptas sit, aspernatur aut odit aut fugit,
+                                        sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="section-6__wrap-container">
+                                <div class="section-6__wrap-container-img" ngClass.xs="section-6__wrap-container-img-xs">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <div class="section-6__wrap-container-info">
+                                    <p class="section-6__wrap-container-info-title">Sed Unde Omnis
+                                    </p>
+                                    <small class="section-6__wrap-container-info-by">by <b>admin</b> | 19 APRIL</small>
+                                    <p class="section-6__wrap-container-info-text"> Nemo enim ipsam voluptatem,
+                                        quia voluptas sit, aspernatur aut odit aut fugit,
+                                        sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="section-6__wrap-container">
+                                <div class="section-6__wrap-container-img" ngClass.xs="section-6__wrap-container-img-xs">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <div class="section-6__wrap-container-info">
+                                    <p class="section-6__wrap-container-info-title">Sed Unde Omnis
+                                    </p>
+                                    <small class="section-6__wrap-container-info-by">by <b>admin</b> | 19 APRIL</small>
+                                    <p class="section-6__wrap-container-info-text"> Nemo enim ipsam voluptatem,
+                                        quia voluptas sit, aspernatur aut odit aut fugit,
+                                        sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="section-6__wrap-container">
+                                <div class="section-6__wrap-container-img" ngClass.xs="section-6__wrap-container-img-xs">
+                                    <i class="section-4__wrap-item-icon material-icons">image</i>
+                                </div>
+                                <div class="section-6__wrap-container-info">
+                                    <p class="section-6__wrap-container-info-title">Sed Unde Omnis
+                                    </p>
+                                    <small class="section-6__wrap-container-info-by">by <b>admin</b> | 19 APRIL</small>
+                                    <p class="section-6__wrap-container-info-text"> Nemo enim ipsam voluptatem,
+                                        quia voluptas sit, aspernatur aut odit aut fugit,
+                                        sed quia consequuntur magni dolores eos, qui ratione voluptatem sequi nesciunt
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-7">
+                    <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutAlign="space-around center" fxFill>
+                        <div class="section-7__info">
+                            <p class="section-7__info-title">Perspiciatis Unde Omnis</p>
+                        </div>
+
+                        <div fxLayout="row" class="section-7__container">
+                            <input class="section-7__container-input" ngClass.xs="section-7__container-input-xs"
+                                placeholder="Your Email">
+                            <button class="section-7__container-button" ngClass.xs="section-7__container-button-xs">SUBSCRIBE</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-8">
+                    <div fxLayout="column" fxLayoutAlign="center center" fxFill>
+                        <div class="section-8__info">
+                            <h1 class="section-8__info-title">Perspiciatis Unde Omnis</h1>
+                            <p class="section-8__info-text">Sed ut perspiciatis, unde omnis iste natus error sit
+                                voluptatem accusantium
+                                doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore
+                                veritatis et quasi architecto beatae vitae dicta sunt, explicabo.</p>
+                        </div>
+
+                        <div class="section-8__wrap" fxLayout="row wrap" fxLayoutAlign="center center">
+
+                            <div class="container">
+
+                                <div class="container__circle">
+                                    <figure class="chart" data-percent="90">
+                                        <figcaption>90%</figcaption>
+                                        <svg width="200" height="200">
+                                            <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)" />
+                                        </svg>
+                                    </figure>
+                                </div>
+
+                                <div class="container__circle">
+                                    <figure class="chart" data-percent="85">
+                                        <figcaption>85%</figcaption>
+                                        <svg width="200" height="200">
+                                            <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)" />
+                                        </svg>
+                                    </figure>
+                                </div>
+
+                                <div class="container__circle">
+                                    <figure class="chart" data-percent="80">
+                                        <figcaption>80%</figcaption>
+                                        <svg width="200" height="200">
+                                            <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)" />
+                                        </svg>
+                                    </figure>
+                                </div>
+
+                                <div class="container__circle">
+                                    <figure class="chart" data-percent="75">
+                                        <figcaption>75%</figcaption>
+                                        <svg width="200" height="200">
+                                            <circle class="outer" cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)" />
+                                        </svg>
+                                    </figure>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+            <div fxLayout="row">
+                <footer fxFill></footer>
+            </div>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
